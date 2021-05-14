@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/72fee1912b.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/css/home.css">
+    <!-- Notice the path of this css file is /css/home.css and not /assests/css/home.css, this is because out middleware starts looking in folder assests, and hence we need to define this path as per that middleware...and not as per this .ejs file else it wont work... -->
+
+    <title>
+        <%= title %>
+    </title>
+</head>
+<body>
+    <h1 id="page-heading">
+        <i class="fas fa-address-book"></i>
+        My Contacts List
+    </h1>
+    <div>
+        <ul>
+            <% for(let i of contact_list){ %>
+                <li>
+                    <div class="contact-details">
+                        <h3><%= i.name %></h3>
+                        <h3><%= i.phone %></h3>
+                    </div>
+                    <div class="delete-icon">
+                        <!-- Use this if database is not connected
+                        <a href="/delete-contact/?phone=<%= i.phone %>">
+                            <i class="fas fa-trash"></i>
+                        </a> -->
+
+                        <!-- Use this if database is connected as only then there will be an id parameter -->
+                        <a href="/delete-contact/?id=<%= i.id %>">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                    </div>
+                </li>
+            <% } %>
+        </ul>
+    </div>
+
+    <div id="contact-form">
+        <form action="/create-contact" method="POST">
+            <input type="text" name="name" placeholder="Enter name here" required>
+            <input type="number" name="phone" placeholder="Enter phone" required>
+            <button type="submit">Add</button>
+        </form>
+    </div>
+
+    <script src="/js/home.js"></script>
+</body>
+</html>

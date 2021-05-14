@@ -1,0 +1,63 @@
+body{
+    margin: 0;
+    font-family: sans-serif;
+}
+
+#page-heading{
+    text-align: center;
+    margin-top: 25px;
+    color: grey;
+}
+
+h3{
+    display: inline-block;
+    margin: 0 10px;
+    margin-top: 7px;
+}
+
+ul{
+    text-decoration: none;
+    padding: 0;
+}
+
+li{
+    border-bottom: white solid 5px;
+    text-align: center;
+}
+
+.contact-details{
+    margin: 0 auto;
+    display: inline-flex;
+    justify-content: space-between;
+    background-color: #648FFF;
+    color: white;
+    width: 600px;
+    height: 35px;
+}
+
+.contact-details:hover{
+    background-color: gray;
+    cursor: pointer;
+}
+
+.delete-icon{
+    display: inline-block;
+    font-size: 22px;
+}
+
+a{
+    color: red;
+}
+
+form{
+    text-align: center;
+    /* padding-left: 45px; */
+}
+
+button{
+    background-color: gray;
+    color: white;
+    border: none;
+    height: 23px;
+    width: 65px;
+}
